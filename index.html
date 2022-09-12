@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 2</title>
+    <style>
+        h3   {color: black;}
+    </style>
+</head>
+<body style="background-color:palevioletred; color: blue; ">
+ <h3>1.Explain call(), apply() and, bind() methods. Give an example of call(), apply(), bind()</h3>
+<pre>call() - It invokes the function and allows you to pass in arguments one by one.
+    ex - const person = {
+        firstName:"John",
+        lastName: "Doe",
+        fullName: function () {
+          return this.firstName + " " + this.lastName;
+        }
+      }
+      
+      person.fullName();  
+      
+    apply() - It invokes the function and allows you to pass in arguments as an array.
+    ex - const person = {
+        fullName: function() {
+          return this.firstName + " " + this.lastName;
+        }
+      }
+      
+      const person1 = {
+        firstName: "Mary",
+        lastName: "Doe"
+      }
+      person.fullName.apply(person1);
+    
+    
+    
+    bind() - I t returns a new function, allowing you to pass in a this array and any number of arguments.
+    ex - const person = {
+        firstName:"John",
+        lastName: "Doe",
+        fullName: function () {
+          return this.firstName + " " + this.lastName;
+        }
+      }
+      const member = {
+        firstName:"Hege",
+        lastName: "Nilsen",
+      }
+      let fullName = person.fullName.bind(member);</pre>
+
+
+  <h3>2.What are objects in javascript?</h3>
+<p>Object is a non-primitive data-type that allows us to store multiple collections of data in the form of keyvalue pairs.
+</p>
+
+<h3>3.What are function constructors?</h3>
+<pre>
+    A constructor is a special function that creates and initializes an object instance of a class. 
+It is a constructor gets called when an object is created using the new keyword. 
+The purpose of a constructor is to create a new object and set values for any existing object
+ properties.
+ex - const sum = new Function('a', 'b', 'return a + b');
+console.log(sum(2, 6));
+</pre>
+
+<h3>4.Explain prototypes</h3>
+<pre>
+    The prototype is an object that is associated with every functions and objects by default.
+ex - const parentObject={
+
+name:"Rakesh",
+age:23,
+
+
+}
+var childObect=Object.create(parentObject)
+console.log(parentObject.name);
+console.log(childObect.name);
+
+</pre>
+
+<h3>5.What is prototype chain</h3>
+<p>
+    In prototype chain each object has a private property which holds a link to another object called its prototype. <br>
+That prototype object has a prototype of its own, and so on until an object is reached with null as its prototype. <br>
+</p>
+
+<h3>6.Give an example of inheritance using function constructor</h3>
+<p>
+    Inheritance is a useful feature that allows code reusability. In the above example, <br>
+the Student class inherits all the methods and properties of the Person class. <br>
+Hence, the Student class will now have the name property and the greet() method. <br>
+</p>
+
+<h3>7.What are callbacks?</h3>
+<pre>
+    A callback function is a function passed as an argument to another function.
+ex- function greeting(name) {
+  alert('Hello ' + name);
+}
+
+function processUserInput(callback) {
+  var name = prompt('Please enter your name.');
+  callback(name);
+}
+
+processUserInput(greeting);
+</pre>
+
+<h3>8.What is the use of setTimeout</h3>
+<p>
+    It sets a timer which executes a function or specified piece of code once the timer expires. <br>
+Syntax: setTimeout(function, time);
+
+</p>
+<h3>9.What is an event loop and call stack</h3>
+<p>
+    Event loop - It is responsible for exceuting the code, collecting and processing events, and <br>
+exceuting queued sub - tasks. <br>
+Call stack - It is a mechanism for interpreter to keep track of multiple function call. 
+</p>
+
+</body>
+</html>
